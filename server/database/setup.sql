@@ -14,6 +14,7 @@ CREATE TABLE sightings (
     title VARCHAR(100) NOT NULL,
     enitity VARCHAR NOT NULL,
     info VARCHAR(255),
+    severity INT NOT NULL,
     sighting_location VARCHAR NOT NULL,
     sighting_date VARCHAR NOT NULL,
     FOREIGN KEY (account_id) REFERENCES accounts(account_id)

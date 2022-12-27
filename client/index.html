@@ -28,5 +28,47 @@
         </div>
       </nav>
     </header>
+    <main>
+      <div class="filters">
+        <div class="filter-dropdown">
+          <button class="filter-button">
+            Filters
+            <img src="./static/images/chevron-down.png" alt="" />
+          </button>
+        </div>
+        <form class="filter-form">
+          <div class="form-dropdowns">
+            <div class="form-item">
+              <label for="entity">Entity:</label>
+              <button id="entity" type="button">
+                <p id="entity-dropdown">All</p>
+                <img
+                  class="sort-down"
+                  src="./static/images/sort-down.png"
+                  alt=""
+                />
+              </button>
+            </div>
+            <div class="form-item">
+              <label for="location">Location:</label>
+              <button id="location" type="button">
+                <p id="location-dropdown">All</p>
+                <img
+                  class="sort-down"
+                  src="./static/images/sort-down.png"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div class="form-slider">
+            <label for="year">Year</label>
+          </div>
+          <div class="form-slider">
+            <label for="severity">Severity</label>
+          </div>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

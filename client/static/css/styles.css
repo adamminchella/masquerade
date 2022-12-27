@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
   box-sizing: border-box;
 }
@@ -8,10 +10,11 @@ html {
 
 body {
   margin: 0;
-  padding: 20px 0;
+  padding: 0;
   background-color: rgb(20, 20, 20);
   height: 1000px;
   color: white;
+  font-family: "Lato", sans-serif;
 }
 
 /* Header */
@@ -21,13 +24,19 @@ h1 {
   margin: 0;
 }
 
+header {
+  background-color: rgb(20, 20, 20);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 20px;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
-  left: 0;
-  right: 0;
 }
 
 .nav-icon {
@@ -75,4 +84,79 @@ nav {
 .nav-links {
   display: flex;
   gap: 30px;
+}
+
+/* Main */
+
+main {
+  margin-top: 100px;
+  width: 50%;
+  margin: 90px auto;
+}
+
+.filters {
+  font-size: 1.5rem;
+}
+
+.filter-dropdown {
+  display: flex;
+  justify-content: end;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: rgb(230, 230, 230);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.filter-button > img {
+  width: 22px;
+}
+
+.form-dropdowns {
+  display: flex;
+  gap: 25px;
+}
+
+#entity,
+#location {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  font-size: 1.5rem;
+  color: rgb(230, 230, 230);
+  background-color: rgb(51, 51, 51);
+  border: none;
+  border-radius: 3px;
+  gap: 8px;
+}
+
+#entity-dropdown,
+#location-dropdown {
+  margin: 0;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-down {
+  width: 10px;
+}
+
+#year,
+#severity {
+  font-size: 1.5rem;
+}
+
+.form-slider {
+  margin: 30px 0;
 }
