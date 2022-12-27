@@ -12,6 +12,7 @@ CREATE TABLE sightings (
     sighting_id serial PRIMARY KEY,
     account_id INT NOT NULL,
     title VARCHAR(100) NOT NULL,
+    enitity VARCHAR NOT NULL,
     info VARCHAR(255),
     sighting_location VARCHAR NOT NULL,
     sighting_date VARCHAR NOT NULL,
