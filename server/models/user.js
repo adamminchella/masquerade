@@ -20,7 +20,7 @@ class User {
         const user = new User(response.rows[0]);
         resolve(user);
       } catch (err) {
-        reject("Unable to locate account");
+        reject(err.message);
       }
     });
   }
