@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const userRouter = require("./routers/user");
+const sightingRouter = require("./routers/sighting");
 
 const server = express();
 
@@ -13,5 +14,6 @@ server.get("/", (req, res) => {
 });
 
 server.use("/users", userRouter);
+server.use("/sightings", sightingRouter);
 
 module.exports = server;
