@@ -31,11 +31,11 @@ minSeveritySlider.addEventListener("input", () => {
 });
 
 maxYearSlider.addEventListener("input", () => {
-  controlToSlider(minYearSlider, maxYearSlider, maxYear);
+  controlToSlider(minYearSlider, maxYearSlider, maxYear, 1900);
 });
 
 maxSeveritySlider.addEventListener("input", () => {
-  controlToSlider(minSeveritySlider, maxSeveritySlider, maxSeverity);
+  controlToSlider(minSeveritySlider, maxSeveritySlider, maxSeverity, 0);
 });
 
 function controlFromSlider(fromSlider, toSlider, fromInput) {
@@ -48,9 +48,10 @@ function controlFromSlider(fromSlider, toSlider, fromInput) {
     fromInput.textContent = min;
   }
 }
-function controlToSlider(fromSlider, toSlider, toInput) {
+function controlToSlider(fromSlider, toSlider, toInput, minValue) {
   const [min, max] = getParsed(fromSlider, toSlider);
   fillSlider(fromSlider, toSlider, "#C6C6C6", "#25daa5", toSlider);
+  setToggleAccessible(toSlider, minValue);
   if (max < min) {
     toSlider.value = min;
     toInput.textContent = min;
@@ -73,6 +74,17 @@ function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
       ${sliderColor} 100%)`;
 }
 
+function setToggleAccessible(currentTarget, minValue) {
+  //   const toSlider = document.querySelector("#max-year-slider");
+  //   console.log(currentTarget, toSlider);
+  //   console.log(currentTarget.value);
+  if (Number(currentTarget.value) <= minValue) {
+    currentTarget.style.zIndex = 2;
+  } else {
+    currentTarget.style.zIndex = 0;
+  }
+}
+
 function getParsed(currentFrom, currentTo) {
   const min = parseInt(currentFrom.value);
   const max = parseInt(currentTo.value);
@@ -88,4 +100,6 @@ window.addEventListener("load", () => {
     "#25daa5",
     maxSeveritySlider
   );
+  setToggleAccessible(maxYearSlider, 1900);
+  setToggleAccessible(maxSeveritySlider, 0);
 });
