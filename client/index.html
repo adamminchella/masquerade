@@ -36,7 +36,7 @@
             <img src="./static/images/chevron-down.png" alt="" />
           </button>
         </div>
-        <form class="filter-form">
+        <form class="filter-form hidden">
           <div class="form-dropdowns">
             <div class="form-item">
               <label for="entity">Entity:</label>
@@ -62,10 +62,58 @@
             </div>
           </div>
           <div class="form-slider">
-            <label for="year">Year</label>
+            <label class="label" for="year">Year</label>
+            <div class="range-container">
+              <div class="slider-values">
+                <p id="min-year">1900</p>
+                <p id="max-year">2022</p>
+              </div>
+              <div class="sliders-control">
+                <input
+                  id="min-year-slider"
+                  type="range"
+                  value="1900"
+                  min="1900"
+                  max="2022"
+                />
+                <input
+                  id="max-year-slider"
+                  type="range"
+                  value="2022"
+                  min="1900"
+                  max="2022"
+                />
+              </div>
+            </div>
           </div>
           <div class="form-slider">
-            <label for="severity">Severity</label>
+            <label class="label" for="severity">Severity</label>
+            <div class="range-container">
+              <div class="slider-values">
+                <p id="min-severity">0</p>
+                <p id="max-severity">100</p>
+              </div>
+              <div class="sliders-control">
+                <input
+                  id="min-severity-slider"
+                  type="range"
+                  value="0"
+                  min="0"
+                  max="100"
+                />
+                <input
+                  id="max-severity-slider"
+                  type="range"
+                  value="100"
+                  min="0"
+                  max="100"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-footer">
+            <p>Reset</p>
+            <button class="apply-btn" type="button">Apply</button>
           </div>
         </form>
       </div>
