@@ -275,3 +275,7 @@ input[type="range"] {
 .hidden {
   display: none;
 }
+
+.card {
+  margin-bottom: 60px;
+}
