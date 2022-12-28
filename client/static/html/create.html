@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masquerade</title>
+    <link rel="stylesheet" href="../css/create.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <script defer src="../js/create.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title-container">
+          <h1>Masquerade</h1>
+          <div class="search-container">
+            <input type="text" placeholder="Title Search" />
+            <img class="nav-icon" src="../images/browse.svg" alt="" />
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="../../index.html"
+            ><img class="nav-icon" src="../images/browse.svg" alt=""
+          /></a>
+          <img class="nav-icon" src="../images/watchlist.png" alt="" />
+          <a href="#"
+            ><img class="nav-icon" src="../images/create.png" alt=""
+          /></a>
+          <img class="nav-icon" src="../images/settings.svg" alt="" />
+          <img class="nav-icon" src="../images/login.png" alt="" />
+        </div>
+      </nav>
+    </header>
+    <main>
+      <form>
+        <div class="content">
+          <div class="text-inputs">
+            <p class="title-label hidden">Title</p>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title..."
+              autocomplete="off"
+            />
+            <p class="name-label hidden">Date</p>
+            <input
+              type="date"
+              name="author"
+              id="author"
+              autocomplete="off"
+              min="1900-01-01"
+            />
+            <p></p>
+            <textarea
+              name="story"
+              id="story"
+              placeholder="Your story..."
+              autocomplete="off"
+              cols="30"
+              rows="1"
+            ></textarea>
+          </div>
+          <div class="submit-container">
+            <input type="submit" name="submit" id="submit" value="Publish" />
+            <p class="error error-message hidden"></p>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

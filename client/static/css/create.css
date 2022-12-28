@@ -1,0 +1,97 @@
+main {
+  margin-top: 100px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 70%;
+  padding-top: 20px;
+  margin: auto;
+}
+
+.text-inputs {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+}
+
+.text-inputs > * {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  margin: 0;
+  padding: 7px 20px;
+  border: 0;
+}
+
+.text-inputs > *:focus {
+  outline: none;
+}
+
+#title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: "Lato", sans-serif;
+}
+
+#title::placeholder {
+  font-weight: 100;
+}
+
+#author {
+  font-size: 1.8rem;
+  font-family: "Lato", sans-serif;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.title-label {
+  transition: opacity 0.2s;
+  font-size: 2.5rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: right;
+  border-right: 1px solid rgb(179, 179, 179);
+  font-family: "Lato", sans-serif;
+}
+
+.name-label {
+  transition: opacity 0.2s;
+  font-size: 1.8rem;
+  text-align: right;
+  border-right: 1px solid rgb(179, 179, 179);
+  font-family: "Lato", sans-serif;
+}
+
+#story {
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem;
+  resize: none;
+  letter-spacing: 0.7px;
+  line-height: 27px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+#postId {
+  padding-top: 25px;
+  font-size: 0.9rem;
+}
+
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#submit {
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: 7px;
+}
