@@ -29,7 +29,7 @@ async function register(req, res) {
     //   Send it back
     res.status(201).send(result);
   } catch (err) {
-    res.status(400).json({ error: err });
+    res.status(400).json({ error: err.message });
   }
 }
 
@@ -43,11 +43,12 @@ async function login(req, res) {
       user_password,
       user.user_password
     );
+    console.log(authenticated);
     if (authenticated) {
       // If password correct
 
       // Generate a session for user when they log in
-      const newSession = await Session.create(user.id);
+      const newSession = await Session.create(user.account_id);
       res.status(200).json({
         authenticated: true,
         session: newSession.session_token,
