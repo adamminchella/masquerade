@@ -7,8 +7,10 @@
     <title>Masquerade</title>
     <link rel="stylesheet" href="./static/css/styles.css" />
     <link rel="stylesheet" href="./static/css/nav.css" />
+    <link rel="stylesheet" href="./static/css/login.css" />
     <script defer src="./static/js/requests.js"></script>
     <script defer src="./static/js/script.js"></script>
+    <script defer src="./static/js/login.js"></script>
   </head>
   <body>
     <header>
@@ -29,7 +31,11 @@
             ><img class="nav-icon" src="./static/images/create.png" alt=""
           /></a>
           <img class="nav-icon" src="./static/images/settings.svg" alt="" />
-          <img class="nav-icon" src="./static/images/login.png" alt="" />
+          <img
+            class="nav-icon login-nav-icon"
+            src="./static/images/login.png"
+            alt=""
+          />
         </div>
       </nav>
     </header>
@@ -151,5 +157,58 @@
         </div>
       </div>
     </main>
+    <div class="modal register-modal hidden">
+      <div class="modal-content">
+        <h2 class="modal-title">Register</h2>
+        <form>
+          <input
+            name="register-username"
+            id="register-username"
+            placeholder="Username"
+            type="text"
+            class="modal-input"
+          />
+          <input
+            type="password"
+            name="register-password"
+            placeholder="Password"
+            id="register-password"
+            class="modal-input"
+          />
+          <input class="modal-submit" type="submit" value="Register" />
+        </form>
+        <p class="modal-handler">
+          Already have an account? <span class="link login-link">Login</span>
+        </p>
+        <img class="modal-close" src="./static/images/login.png" alt="" />
+      </div>
+    </div>
+    <div class="modal login-modal hidden">
+      <div class="modal-content">
+        <h2 class="modal-title">Login</h2>
+        <form>
+          <input
+            name="login-username"
+            id="login-username"
+            placeholder="Username"
+            type="text"
+            class="modal-input"
+          />
+          <input
+            type="password"
+            name="login-password"
+            placeholder="Password"
+            id="login-password"
+            class="modal-input"
+          />
+          <input class="modal-submit" type="submit" value="Login" />
+        </form>
+        <p class="modal-handler">
+          Don't have an account?
+          <span class="link register-link">Register</span>
+        </p>
+        <img class="modal-close" src="./static/images/login.png" alt="" />
+      </div>
+    </div>
   </body>
 </html>
