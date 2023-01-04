@@ -43,7 +43,6 @@ async function login(req, res) {
       user_password,
       user.user_password
     );
-    console.log(authenticated);
     if (authenticated) {
       // If password correct
 

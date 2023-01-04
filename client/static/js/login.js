@@ -6,8 +6,25 @@ const registerModal = document.querySelector(".register-modal");
 const loginLink = document.querySelector(".login-link");
 const registerLink = document.querySelector(".register-link");
 
-loginButton.addEventListener("click", () => {
-  loginModal.classList.remove("hidden");
+const account_id = window.location.href.split("=")[1];
+
+loginButton.addEventListener("click", async () => {
+  if (account_id) {
+    const url = `http://localhost:3000/users/logout/${account_id}`;
+    const options = {
+      headers: {
+        Authorization: localStorage.getItem("session"),
+      },
+    };
+    const response = await fetch(url, options);
+    if (response.status == 200) {
+      const data = await response.json();
+      localStorage.clear();
+      window.location.assign("index.html");
+    }
+  } else {
+    loginModal.classList.remove("hidden");
+  }
 });
 
 registerLink.addEventListener("click", () => {
@@ -91,10 +108,11 @@ loginForm.addEventListener("submit", async (e) => {
   const response = await fetch(url, options);
   const data = await response.json();
   if (response.status == 200) {
-    loginModal.classList.add("hidden");
-    username.value = "";
-    password.value = "";
+    // loginModal.classList.add("hidden");
+    // username.value = "";
+    // password.value = "";
     localStorage.setItem("session", data.session);
+    window.location.href = `index.html?account_id=${data.account_id}`;
   }
 
   console.log(data);
